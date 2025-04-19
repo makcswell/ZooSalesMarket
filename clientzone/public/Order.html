@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа</title>
+    <style>
+        /* Основной контейнер для товаров */
+        .cart-items {
+            padding: 20px;
+        }
+        /* Стили для каждого товара */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+            /* Размер изображения */
+            .cart-item img {
+                width: 50px;
+                height: auto;
+            }
+        /* Стили для блока с количеством */
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .quantity-controls button {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                cursor: pointer;
+            }
+
+            .quantity-controls input {
+                width: 40px;
+                text-align: center;
+                border: 1px solid #ccc;
+                height: 30px;
+            }
+        /* Стили для цены */
+        .price {
+            font-weight: bold;
+        }
+        /* Итоговая сумма */
+        .total {
+            text-align: right;
+            font-weight: bold;
+            padding: 20px;
+        }
+        /* Кнопки действий */
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+            .actions button {
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .actions .back {
+                background-color: yellow;
+            }
+
+            .actions .checkout {
+                background-color: green;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <!-- Заголовок -->
+    <h1>Оформление заказа</h1>
+
+    <!-- Заголовки таблицы -->
+    <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+        <span>Товар</span>
+        <span>Количество</span>
+        <span>Цена</span>
+    </div>
+
+    <!-- Список товаров -->
+    <div class="cart-items">
+        <!-- Товар 1: University S Софа серая д/собак 40*60см -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://samizoo.ru/upload/iblock/397/p57tf3s1oiytennua116lpkpx7j5q2x9.jpg" alt="University S Софа серая д/собак 40*60см">
+                <span>University S Софа серая д/собак 40*60см</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">5005 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 2: Шлейка розовая, бархатная, со стразами 600х710 -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://www.ppets.ru/image/cache/catalog/photo/7/p-ru-upload-files-new-e7-a5-48-20466_1600x1600-600x710.jpg" alt="Шлейка розовая, бархатная, со стразами 600х710">
+                <span>Шлейка розовая, бархатная, со стразами 600х710</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">1980 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 3: Лакомство для собак МИРАТОРГ -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://avatars.mds.yandex.net/get-mpic/5259100/img_id4662004047618413511.jpeg/orig" alt="Лакомство для собак МИРАТОРГ">
+                <span>Лакомство для собак МИРАТОРГ</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">590 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 4: Лакомство для собак TITBIT мясные палочки -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://cdn1.ozone.ru/s3/multimedia-w/6073585652.jpg" alt="Лакомство для собак TITBIT мясные палочки">
+                <span>Лакомство для собак TITBIT мясные палочки</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">200 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 5: Массажная силиконовая щетка для мытья собак желтая -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://ir.ozone.ru/s3/multimedia-1-o/wc1000/7310239836.jpg" alt="Массажная силиконовая щетка для мытья собак желтая">
+                <span>Массажная силиконовая щетка для мытья собак желтая</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">175 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 6: Миска для кошек собак -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://ir.ozone.ru/s3/multimedia-1-c/wc1000/7237150176.jpg" alt="Миска для кошек собак">
+                <span>Миска для кошек собак</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">980 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+
+        <!-- Товар 7: Корм для собак сухой 3 кг гипоаллергенный ZILLII -->
+        <div class="cart-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://ir.ozone.ru/s3/multimedia-1-w/wc1000/7394232524.jpg" alt="Корм для собак сухой 3 кг гипоаллергенный ZILLII">
+                <span>Корм для собак сухой 3 кг гипоаллергенный ZILLII</span>
+            </div>
+            <div class="quantity-controls">
+                <button>-</button>
+                <input type="text" value="1" readonly>
+                <button>+</button>
+            </div>
+            <span class="price">1780 руб.</span>
+            <button style="border: none; background: none; cursor: pointer;">🗑️</button>
+        </div>
+    </div>
+
+    <!-- Итоговая сумма -->
+    <div class="total">
+        Итоговая сумма: 3960 руб. <!-- Здесь вы можете динамически обновлять сумму на основе выбранных товаров -->
+    </div>
+
+    <!-- Кнопки действий -->
+    <div class="actions">
+        <button class="back" onClick="window.history.back()">Вернуться</button>
+        <button class="checkout">Оплатить</button>
+    </div>
+</body>
+</html>
+
+

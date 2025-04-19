@@ -1,0 +1,6 @@
+@ZooSalesMarket_HostAddress = http://localhost:5190
+
+GET {{ZooSalesMarket_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

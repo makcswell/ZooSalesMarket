@@ -1,0 +1,97 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+    .row:last-child {
+        border-bottom: none;
+    }
+
+.nominal {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+    .quantity button {
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        border: 1px solid #333;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .quantity input {
+        width: 40px;
+        text-align: center;
+        border: 1px solid #333;
+        border-left: none;
+        border-right: none;
+        height: 28px;
+    }
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+    .total .fee {
+        color: red;
+    }
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .buttons .back {
+        background: #f5c518;
+    }
+
+    .buttons .pay {
+        background: #28a745;
+        color: white;
+    }
+
