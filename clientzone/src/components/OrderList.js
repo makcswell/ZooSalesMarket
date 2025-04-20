@@ -16,7 +16,7 @@ const OrdersList = () => {
                 }
             } catch (error) {
                 console.error("Error fetching orders:", error);
-                setError(`Не удалось загрузить заказы: ${error?.message || 'Неизвестная ошибка'}`); // Выводим сообщение об ошибке
+                setError(`Не удалось загрузить заказы: ${error?.message || 'Неизвестная ошибка'}`); 
             }
         };
 
