@@ -1,47 +1,51 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ZooSalesMarket;
 using ZooSalesMarket.Data;
 
-var builder = WebApplication.CreateBuilder(args);
 
-
-ConfigureServices(builder.Services, builder.Configuration);
-
-var app = builder.Build();
-
-// Конфигурируем конвейер HTTP-запросов
-Configure(app, app.Environment);
-
-app.Run();
-
-void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+namespace MySuperDuperPetProject
 {
-    // Добавляем контекст базы данных
-    services.AddDbContext<AppDbContext>(options =>
-        options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
-
-    // Добавляем контроллеры с представлениями
-    services.AddControllersWithViews();
-}
-
-void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    if (env.IsDevelopment())
+    public class Program
     {
-        app.UseDeveloperExceptionPage();
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+
+        }
+
+        private static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            string appS = "appsettings.json";
+            if (args.Length > 0)
+            {
+                appS = args[0];
+            }
+            return Host.CreateDefaultBuilder(args)
+                  .ConfigureAppConfiguration((builderContext, config) =>
+                  {
+                      config.SetBasePath(Directory.GetCurrentDirectory());
+                      config.AddJsonFile(appS, optional: false, reloadOnChange: false);
+                      config.AddEnvironmentVariables();
+                  })
+                  .ConfigureWebHostDefaults(webBuilder =>
+                  {
+                      webBuilder.ConfigureKestrel((context, options) =>
+                      {
+                          options.Limits.MaxRequestBodySize = 737_280_000;
+                      })
+                      .UseStartup<Startup>();
+                  }).ConfigureLogging(logging =>
+                  {
+                      logging.ClearProviders();
+                      logging.AddConsole();
+                      logging.SetMinimumLevel(LogLevel.Trace);
+                  });
+        }
+        public void Configure() { }
+
+
+
     }
-
-    app.UseStaticFiles();
-    app.UseRouting();
-    app.UseAuthorization();
-
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller}/{action=Index}/{id?}");
-
-        // Добавляем fallback для index.html
-        //endpoints.MapFallbackToFile("App.js");
-    });
 }

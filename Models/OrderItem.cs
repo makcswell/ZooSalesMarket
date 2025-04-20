@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ZooSalesMarket.Models
+﻿namespace ZooSalesMarket.Models
 {
     public class OrderItem
     {
-        [Key]
         public int Id { get; set; }
-        public int ProductId { get; set; }
+        public string Brand { get; set; }
+        public string Name { get; set; }
         public int Quantity { get; set; }
-        public decimal TotalPrice { get; set; }
+        public int OrderId { get; set; } // Связь с заказом
+        public Order? Order { get; set; } // Навигационное свойство
     }
 }

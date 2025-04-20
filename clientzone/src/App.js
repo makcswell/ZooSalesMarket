@@ -4,6 +4,7 @@ import ProductCatalog from './components/ProductCatalog';
 import Order from './components/Order';
 import Payment from './components/Payment';
 import PaymentSuccess from './components/PaymentSuccess';
+import OrdersList from './components/OrderList';
 
 const App = () => {
     const [selectedProducts, setSelectedProducts] = useState({});
@@ -54,6 +55,10 @@ const App = () => {
                 <Route
                     path="/payment-success"
                     element={<PaymentSuccess change={change} />}
+                />
+                <Route
+                    path="/orders"
+                    element={<OrdersList />}
                 />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>

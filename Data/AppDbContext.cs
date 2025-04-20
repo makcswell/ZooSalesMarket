@@ -11,5 +11,6 @@ namespace ZooSalesMarket.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Coin> Coins { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> Items { get; set; }
     }
 }
